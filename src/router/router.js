@@ -11,15 +11,15 @@ const router = createBrowserRouter(
             element:<MainLayout/>,
             children:[
                 {
-                    index: true,
-                    element: <Navigate to={links.MOVIES}/>
+                    path:'/movies',
+                    element: <MoviesListPage/>
                 },
                 {
-                    path: links.MOVIES,
-                    element:<MoviesListPage/>
+                    path: '/genres',
+                    element:<MoviesInfoPage/>
                 },
                 {
-                    path: `${links.MOVIES}/movieId`,
+                    path: '/search',
                     element:<MoviesInfoPage/>
                 }
             ]
