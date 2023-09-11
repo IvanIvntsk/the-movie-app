@@ -4,7 +4,7 @@ import {baseURL} from "../../constants/urls/urls";
 import {apiToken} from "../../constants/apiToken/apiToken";
 
 const apiServices = axios.create({
-    baseURL:baseURL,
+    baseURL,
     headers: {
         Authorization: apiToken,
     }

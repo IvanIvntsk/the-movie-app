@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <div>
             <NavLink to={'movies'}>Movies</NavLink>
-            <NavLink to={'genres'}>Genres</NavLink>
+            <NavLink to={'genders'}>Genres</NavLink>
             <NavLink to={'search'}>Search</NavLink>
         </div>
     );
