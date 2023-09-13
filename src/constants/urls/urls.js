@@ -13,8 +13,10 @@ const urls = {
     moviesList,
     genresLis,
     searchMovie,
-    movieById,
-    upcoming
+    upcoming,
+    movieById:{
+        byId:(id) => `${movieById}/${id}`
+    }
 }
 
 

@@ -4,7 +4,7 @@ import {urls} from "../../constants/urls/urls";
 const moviesServices = {
     getMovies: () => apiServices.get(urls.moviesList),
     getGenres: () => apiServices.get(urls.genresLis),
-    geById : (id) => apiServices.get(`${urls.movieById}/${id}`)
+    geById : (id) => apiServices.get(urls.movieById.byId(id))
 }
 
 export {moviesServices}
