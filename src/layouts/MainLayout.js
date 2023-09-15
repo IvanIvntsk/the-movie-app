@@ -1,14 +1,12 @@
 import React from 'react';
 
 import {Outlet} from "react-router-dom";
-import Header from "../components/Header/Header";
-import {ThemeToggle} from "../components/Header/Topic/Topic";
+import NavBar from "../components/navBar/navBar";
 
 const MainLayout = () => {
     return (
         <div>
-            <Header/>
-
+           <NavBar/>
             <Outlet/>
         </div>
     );

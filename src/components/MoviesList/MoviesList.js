@@ -1,22 +1,19 @@
-import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-
+import {useEffect} from "react";
 import {movieActions} from "../../redux/slices/slices";
 import MoviesListCard from "../MoviesListCard/MoviesListCard";
-import {useSearchParams} from "react-router-dom";
-
 
 const MoviesList = () => {
 
-    const dispatch = useDispatch();
-    const {movies} = useSelector(state => state.movies);
-    console.log(movies);
+    const dispatch = useDispatch()
+    const {movies} = useSelector(state => state.movieReducer)
+    // const [query, setQuery] = useSearchParams({page:'1'});
 
-    const [page,setPage] = useSearchParams({page:'1'})
+    // const page = query.get('page');
 
     useEffect(()=> {
-        dispatch(movieActions.getAll({page}))
-    }, [page])
+        dispatch(movieActions.getAll())
+    }, [])
 
     return (
         <div>

@@ -2,38 +2,45 @@ import {createBrowserRouter, Navigate} from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import {links} from "../constants/links/links";
 import MoviesListPage from "../pages/MoviestListPage/MoviesListPage";
-import MoviesInfoPage from "../pages/MoviesInfoPage/MoviesInfoPage";
 import MoviesGenrePage from "../pages/MoviesGenrePage/MoviesGenrePage";
+import MoviesInfoPage from "../pages/MoviesInfoPage/MoviesInfoPage";
+import MovieGenresListPage from "../pages/MoviesGenrePage/MovieGenresListPage";
 
-const router = createBrowserRouter(
-    [
+
+const router = createBrowserRouter([{
+    path: '',
+    element: <MainLayout/>,
+    children: [
         {
-            path:'/',
-            element:<MainLayout/>,
-            children:[
-                {
-                  index:true,
-                  element:<Navigate to={'movies'}/>
-                },
-                {
-                    path:'movies',
-                    element: <MoviesListPage/>,
-                },
-                {
-                    path:'movieInfo/:id',
-                    element:<MoviesInfoPage/>
-                },
-                {
-                    path: 'genres',
-                    element:<MoviesGenrePage/>
-                },
-                {
-                    path: '/search',
-                    element:<MoviesInfoPage/>
-                }
-            ]
+            index: true,
+            element: <Navigate to={links.MOVIES} />,
+        },
+        {
+            path: '/movies',
+            element: <MoviesListPage />,
+        },
+        {
+            path: 'movie/:id',
+            element: <MoviesInfoPage/>,
+        },
+        {
+            path: '/movies/genres',
+            element: <MoviesGenrePage/>
+        },
+        {
+            path: '/movies/genres/:id',
+            element: <MovieGenresListPage/>
         }
-    ]
-)
+        // {
+        //     path: 'search/movie',
+        //     element: <MoviesFromSearch/>,
+        // },
 
-export {router}
+    ]
+}
+
+])
+
+export {
+    router
+}

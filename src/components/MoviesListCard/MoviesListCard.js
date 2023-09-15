@@ -1,22 +1,22 @@
 import React from 'react';
-import {Link, Outlet, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {w500PosterURL} from "../../constants/urls/urls";
 
-const MoviesListCard = ({movie}) => {
-    // const navigate = useNavigate()
-    const {id,poster_path, original_title} = movie
 
-    return (
-        <div>
-            <h3>{original_title}</h3>
-           <div>
-                <Link to={`/movieInfo/${id}`}>
-                    <img style={{width:250,display:"flex", flexWrap:"wrap", justifyContent:"space-between"}} src={`${w500PosterURL}${poster_path}`}/>
-                </Link>
-           </div>
-              <Outlet/>
-        </div>
-    );
-};
+const MoviesListCard = ({movie}) => {
+    // console.log(movie);
+    const {id, original_title, poster_path, vote_average} = movie
+        const navigate = useNavigate();
+        return (
+            <div>
+                {original_title}
+            <div onClick={()=>navigate(`/movie/${id}`)}>
+                <img style={{fontSize:"100px"}} src={`${w500PosterURL}${poster_path}`}  alt={original_title}/>
+                <br/>
+                {/*<StarRating vote_average={vote_average}/>*/}
+            </div>
+            </div>
+        );
+    };
 
 export default MoviesListCard;

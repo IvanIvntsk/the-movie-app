@@ -5,9 +5,9 @@ import GenreContainer from "./GenreContainer/GenreContainer";
 
 const Genres = () => {
     const dispatch = useDispatch()
-    const {genres} = useSelector(state => state.genres)
+    const {genres} = useSelector(state => state.movieReducer)
     console.log(genres);
-    useEffect(()=>{
+    useEffect(() => {
         dispatch(movieActions.getGenres())
     },[])
 

@@ -1,10 +1,12 @@
 const links = {
+    MOVIE: '/movie',
     MOVIES: '/movies',
     GENRES: '/movies/genres',
-    TIME: '/movies/time',
-    QUERY: '/movies/query'
+    MOVIEID: '/movie/:id',
+    GENRESID: '/movies/genres/:id',
+    SEARCH: '/search',
 }
 
-export {
+export{
     links
 }
