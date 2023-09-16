@@ -5,7 +5,7 @@ import {useSelector} from "react-redux";
 
 const MoviesListPage = () => {
     return (
-        <div>
+        <div style={{}}>
             <MoviesList/>
         </div>
     );

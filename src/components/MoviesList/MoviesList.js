@@ -12,7 +12,7 @@ const MoviesList = () => {
     // const page = query.get('page');
 
     useEffect(()=> {
-        dispatch(movieActions.getAll())
+        dispatch(movieActions .getAll())
     }, [])
 
     return (

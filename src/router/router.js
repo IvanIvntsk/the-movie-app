@@ -6,6 +6,9 @@ import MoviesGenrePage from "../pages/MoviesGenrePage/MoviesGenrePage";
 import MoviesInfoPage from "../pages/MoviesInfoPage/MoviesInfoPage";
 import MovieGenresListPage from "../pages/MoviesGenrePage/MovieGenresListPage";
 
+import UserInfo from "../components/UserInfo/UserInfo";
+import SearchPage from "../pages/SearchPage/SearchPage";
+
 
 const router = createBrowserRouter([{
     path: '',
@@ -30,11 +33,15 @@ const router = createBrowserRouter([{
         {
             path: '/movies/genres/:id',
             element: <MovieGenresListPage/>
+        },
+        {
+            path: 'search/movie',
+            element: <SearchPage/>,
+        },
+        {
+            path:'*',
+            element:<UserInfo/>
         }
-        // {
-        //     path: 'search/movie',
-        //     element: <MoviesFromSearch/>,
-        // },
 
     ]
 }

@@ -1,6 +1,7 @@
 import React from 'react';
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {w500PosterURL} from "../../constants/urls/urls";
+import StarRating from "../StarsRating/StarRating";
 
 
 const MoviesListCard = ({movie}) => {
@@ -10,11 +11,14 @@ const MoviesListCard = ({movie}) => {
         return (
             <div>
                 {original_title}
-            <div onClick={()=>navigate(`/movie/${id}`)}>
-                <img style={{fontSize:"100px"}} src={`${w500PosterURL}${poster_path}`}  alt={original_title}/>
+            <Link onClick={()=>navigate(`/movie/${id}`)}>>
+                <img src={`${w500PosterURL}${poster_path}`}  alt={original_title}/>
+
+            </Link>
                 <br/>
+
                 {/*<StarRating vote_average={vote_average}/>*/}
-            </div>
+
             </div>
         );
     };

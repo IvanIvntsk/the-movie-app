@@ -1,0 +1,37 @@
+.main {
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    background-color:black;
+    border-radius:50px;
+    height: 150px;
+    font-size: 100px;
+}
+.main h2{
+    color: white;
+    font-size: 60px;
+    font-weight: bold;
+    display: inline-block;
+
+}
+.main h2::first-letter{
+    color: transparent;
+    background-image: linear-gradient(45deg, red, orange,yellow, green, blue, purple);
+    background-clip: text;
+    animation: rainbow 5s linear infinite;
+}
+
+.link{
+    color:white;
+    text-decoration: none;
+    font-size: 30px;
+    gap: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.link:hover{
+    font-size: 60px;
+    background-color: black;
+    color: aquamarine;
+    animation: blink 1s infinite alternate;
+}

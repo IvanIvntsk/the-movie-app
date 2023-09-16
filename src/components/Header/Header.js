@@ -1,14 +1,15 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
+import UserInfo from "../UserInfo/UserInfo";
 
 const Header = () => {
 
     return (
-        <div style={{display:"flex", justifyContent:"space-around",alignItems:"center",backgroundColor:"brown"}}>
-            <h2>TMDB</h2>
+        <div >
             <NavLink to={'movies'}>Movies</NavLink>
-            <NavLink to={'genres'}>Genres</NavLink>
-            <NavLink to={'search'}>Search</NavLink>
+            <NavLink to={'movies/genres'}>Genres</NavLink>
+            <NavLink to={'search/movie'}>Search</NavLink>
+            <UserInfo/>
         </div>
     );
 };

@@ -5,8 +5,11 @@ import NavBar from "../components/navBar/navBar";
 
 const MainLayout = () => {
     return (
-        <div>
-           <NavBar/>
+        <div style={{
+            backgroundColor: "grey",
+            justifyContent:"center"
+        }}>
+       <NavBar/>
             <Outlet/>
         </div>
     );

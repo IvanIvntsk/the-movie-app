@@ -1,37 +1,30 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import {links} from "../../constants/links/links";
 import SearchingMovie from "../SearchingMovie/SearchingMovie";
-
-
-
+import css from './navBar.module.css'
 const NavBar = () => {
+
     const buttons = [
         {
             label: 'Movies',
-            route: links.MOVIES
+            route: '/movies'
 
         },
         {
             label: 'Genres',
-            route: links.GENRES
-        }
+            route: '/movies/genres'
+        },
+
     ]
     return (
-        <div style={
-            {
-                width:"100%",
-                height:40,
-                backgroundColor: "coral",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-evenly"
-            }}>
-            {buttons.map((btn, idx) =>
-                <Link key={idx} to={btn.route}>
-                    {btn.label}
+        <div className={css.main}>
+            <h2>TMDB</h2>
+            {buttons.map((button, index) =>
+                <Link className={css.link} key={index} to={button.route}>
+                    {button.label}
                 </Link>)
             }
+
             <SearchingMovie/>
         </div>
     );
