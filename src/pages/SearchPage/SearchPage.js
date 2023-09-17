@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {Link, useNavigate, useParams} from "react-router-dom";
 import {movieActions} from "../../redux/slices/slices";
 import {w500PosterURL} from "../../constants/urls/urls";
+import css from './SearchPage.module.css'
 
 const SearchPage = () => {
     const dispatch = useDispatch()
@@ -15,12 +16,16 @@ const SearchPage = () => {
     },[])
 
     return (
-        <ul>
+        <ul className={css.searching}>
             {searchResult.map((movie)=>(
                 <li key={movie.id}>
-                    {movie.title}
-                    <Link onClick={()=>navigate(`/movie/${movie.id}`)}>>
-                        <img src={`${w500PosterURL}${movie.poster_path}`}  alt={movie.original_title}/>
+                    <h2> <i>Title:</i>
+                        <br/>
+                        {movie.title}</h2>
+                    <Link onClick={()=>navigate(`/movie/${movie.id}`)}>
+                        <img className={css.poster}
+                             src={`${w500PosterURL}${movie.poster_path}`}
+                             alt={movie.original_title}/>
 
                     </Link>
                 </li>

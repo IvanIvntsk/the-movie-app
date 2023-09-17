@@ -1,8 +1,8 @@
 import React from 'react';
 import {w500PosterURL} from "../../constants/urls/urls";
 import {Link, useNavigate} from "react-router-dom";
-import {links} from "../../constants/links/links";
 import css from './MovieInfoDetail.module.css'
+import StarRatings from "react-rating-stars-component";
 const MovieInfoDetail = ({movie}) => {
     const {poster_path, title, vote_average, release_date, tagline, genres, production_countries,vote_count} = movie
     const navigate = useNavigate()
@@ -12,15 +12,25 @@ const MovieInfoDetail = ({movie}) => {
                     <img src={`${w500PosterURL}${poster_path}`}
                          alt={title}/>
             </div>
-            <button onClick={()=>navigate('/movies')}>Back to all movies</button>
+            <button style={{
+                textDecoration:"none",
+                border:"1px solid black",
+                backgroundColor:"grey",
+                color:"white"
+            }} onClick={()=>navigate('/movies')}>Back to all movies</button>
             <div>
                 <div>
-                    {vote_average !== null && vote_average !== undefined && <>
-                        <h3>Ratings:</h3>
-                        {vote_average.toFixed(1)}
-                        {vote_count}
-                    </>}
-                        <h3>Release date:</h3>
+                    <h3>Ratings:</h3>{vote_average && <StarRatings
+                    starDimension="24px"
+                    starSpacing="13px"
+                    numberOfStars={10}
+                    starRatedColor="gold"
+                    name='Rating'
+                    size={"300px"}
+                    value={vote_average}
+                />}
+
+                    <h3>Release date:</h3>
                     {release_date}
                         <h3>Tagline:</h3>
                         <p>{tagline}</p>
@@ -31,8 +41,12 @@ const MovieInfoDetail = ({movie}) => {
                             <div>
                                 {genres.map((genre, index) => {
                                     return (
-                                        <Link
-                                              key={genre.name} to={`${links.GENRES}/${genre.name}/${genre.id}`}>
+                                        <Link style={{
+                                            margin:"10px",
+                                            textDecoration:"none",
+                                            fontSize: "24px"
+                                        }}
+                                              key={genre.name} to={`/movies/genres/${genre.name}/${genre.id}`}>
                                             {genre.name}
                                         </Link>
                                     );

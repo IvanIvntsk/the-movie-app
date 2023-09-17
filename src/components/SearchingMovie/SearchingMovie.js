@@ -3,6 +3,7 @@ import {useDispatch} from "react-redux";
 import {useNavigate} from "react-router-dom";
 import {useForm} from "react-hook-form";
 import {movieActions} from "../../redux/slices/slices";
+import css from './SearchingMovie.module.css'
 
 const SearchingMovie = () => {
     const dispatch = useDispatch()
@@ -15,13 +16,13 @@ const SearchingMovie = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit(searchMovie)}>
+        <form className={css.searching} onSubmit={handleSubmit(searchMovie)}>
             <input
             type={"text"}
             placeholder={"Search movie"}
             {...register("query")}
             />
-            <button>Search</button>
+            <button className={css.button}>Search</button>
         </form>
     );
 };

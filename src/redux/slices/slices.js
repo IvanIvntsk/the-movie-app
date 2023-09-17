@@ -88,7 +88,8 @@ const movieSlice = createSlice({
                 state.genres = action.payload.genres
             })
             .addCase(getMoviesGenres.fulfilled, (state, action) => {
-                state.genreMovie = action.payload.result
+                const {result} = action.payload
+                state.movieByGenre = result
             })
             .addCase(searchMovie.fulfilled, (state, action) => {
                 const {results} = action.payload
