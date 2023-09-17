@@ -8,16 +8,22 @@
 }
 
 .poster{
-    color: black;
-    text-decoration: none;
+    box-shadow: 0px 0px 10px rgba(255,255,255,0.5);
+    border-left: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    transition: border-left-color 0.3s ease;
 }
 
 .poster:hover{
-    color: #007BFF;
+    border-bottom-color:rgba(255,255,255, 0.5) ;
+    border-left-color: rgba(255,255,255, 0.5);
 }
 
-.img {
-    max-width: 100%;
+.ListCard a img {
+    max-width: 60%;
+    height: auto;
+}.ListCard a img:hover {
+    max-width: 80%;
     height: auto;
 }
 

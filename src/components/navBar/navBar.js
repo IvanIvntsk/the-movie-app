@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import SearchingMovie from "../SearchingMovie/SearchingMovie";
 import css from './navBar.module.css'
+import UserInfo from "../UserInfo/UserInfo";
 const NavBar = () => {
 
     const buttons = [
@@ -26,6 +27,8 @@ const NavBar = () => {
             }
 
             <SearchingMovie/>
+
+            <UserInfo/>
         </div>
     );
 };

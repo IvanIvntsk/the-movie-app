@@ -13,8 +13,8 @@ const MoviesListCard = ({movie}) => {
         return (
             <div className={css.ListCard}>
                 <h2>{original_title}</h2>
-            <Link className={css.poster} onClick={()=>navigate(`/movie/${id}`)}>
-                <img className={css.img} src={`${w500PosterURL}${poster_path}`}  alt={original_title}/>
+            <Link onClick={()=>navigate(`/movie/${id}`)}>
+                <img  className={css.poster} src={`${w500PosterURL}${poster_path}`}  alt={original_title}/>
             </Link>
                 <br/>
                 <h3>Ratings:</h3>{vote_average && <StarRatings
