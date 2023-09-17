@@ -9,11 +9,13 @@ const initialState = {
     movie: null,
     searchResult: [],
     pages: 500,
+    prevPage: null,
+    nextPage: null
 }
 
 const getAll = createAsyncThunk (
     'movieSlice/getAll',
-    async (_,thunkAPI) =>{
+    async ({page},thunkAPI) =>{
         try {
             const {data} = await moviesService.getMovies()
             return data

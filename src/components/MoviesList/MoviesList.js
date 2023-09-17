@@ -1,24 +1,27 @@
 import {useDispatch, useSelector} from "react-redux";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {movieActions} from "../../redux/slices/slices";
 import MoviesListCard from "../MoviesListCard/MoviesListCard";
+import {useParams} from "react-router-dom";
 
 const MoviesList = () => {
 
     const dispatch = useDispatch()
     const {movies} = useSelector(state => state.movieReducer)
-    // const [query, setQuery] = useSearchParams({page:'1'});
+    const {page} = useParams()
 
     // const page = query.get('page');
 
     useEffect(()=> {
-        dispatch(movieActions .getAll())
+        dispatch(movieActions .getAll({page}))
     }, [])
 
     return (
-        <div>
+        <div style={{
+
+        }}>
             {movies.map(movie => <MoviesListCard key={movie.id} movie={movie} />)}
-        </div>
+           </div>
     );
 };
 

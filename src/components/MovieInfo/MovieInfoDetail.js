@@ -1,15 +1,13 @@
 import React from 'react';
 import {w500PosterURL} from "../../constants/urls/urls";
-import StarRating from "../StarsRating/StarRating";
-import MoviesGenrePage from "../../pages/MoviesGenrePage/MoviesGenrePage";
 import {Link, useNavigate} from "react-router-dom";
 import {links} from "../../constants/links/links";
-
+import css from './MovieInfoDetail.module.css'
 const MovieInfoDetail = ({movie}) => {
-    const {poster_path, title, vote_average, release_date, tagline, genres, production_countries} = movie
+    const {poster_path, title, vote_average, release_date, tagline, genres, production_countries,vote_count} = movie
     const navigate = useNavigate()
     return (
-        <div>
+        <div  className={css.detail}>
             <div>
                     <img src={`${w500PosterURL}${poster_path}`}
                          alt={title}/>
@@ -19,7 +17,8 @@ const MovieInfoDetail = ({movie}) => {
                 <div>
                     {vote_average !== null && vote_average !== undefined && <>
                         <h3>Ratings:</h3>
-                        {vote_average}
+                        {vote_average.toFixed(1)}
+                        {vote_count}
                     </>}
                         <h3>Release date:</h3>
                     {release_date}
@@ -35,7 +34,6 @@ const MovieInfoDetail = ({movie}) => {
                                         <Link
                                               key={genre.name} to={`${links.GENRES}/${genre.name}/${genre.id}`}>
                                             {genre.name}
-                                            {index !== genres.length - 1 && ','}
                                         </Link>
                                     );
                                 })}

@@ -4,8 +4,9 @@ import MoviesList from "../../components/MoviesList/MoviesList";
 import {useSelector} from "react-redux";
 
 const MoviesListPage = () => {
+
     return (
-        <div style={{}}>
+        <div>
             <MoviesList/>
         </div>
     );

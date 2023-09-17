@@ -1,0 +1,22 @@
+.Genres {
+    display: flex;
+    width: 320px;
+    height: 25px;
+    padding: 16px;
+    justify-content: center;
+    align-content: center;
+    margin-left: 500px;
+
+
+}
+.Genres a{
+    position: absolute;
+    color: #fff;
+    font-size: 32px;
+    text-decoration: none;
+}
+.Genres a:hover{
+    font-size: 45px;
+    color: aquamarine;
+}
+

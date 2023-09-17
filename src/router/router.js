@@ -1,6 +1,5 @@
 import {createBrowserRouter, Navigate} from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
-import {links} from "../constants/links/links";
 import MoviesListPage from "../pages/MoviestListPage/MoviesListPage";
 import MoviesGenrePage from "../pages/MoviesGenrePage/MoviesGenrePage";
 import MoviesInfoPage from "../pages/MoviesInfoPage/MoviesInfoPage";
@@ -16,7 +15,7 @@ const router = createBrowserRouter([{
     children: [
         {
             index: true,
-            element: <Navigate to={links.MOVIES} />,
+            element: <Navigate to={'/movies'} />,
         },
         {
             path: '/movies',
